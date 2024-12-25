@@ -1,23 +1,70 @@
 {
   "name": "@xweb3dev/react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Handy utilities for React apps",
   "keywords": [
     "react",
     "hooks",
     "shadcn/ui"
   ],
-  "homepage": "https://github.com/mattpocock/tt-package-demo",
+  "license": "MIT",
+  "homepage": "https://github.com/borispoehland/react",
   "bugs": {
-    "url": "https://github.com/mattpocock/tt-package-demo/issues"
+    "url": "https://github.com/borispoehland/react/issues"
   },
-  "author": "Matt Pocock <team@totaltypescript.com> (https://totaltypescript.com)",
+  "author": "Boris Pöhland <boris@xweb3.dev> (https://xweb3.dev)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mattpocock/tt-package-demo.git"
+    "url": "git+https://github.com/borispoehland/react.git"
   },
   "files": [
     "dist"
   ],
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "ci": "npm run build && npm run check-format && npm run check-exports && npm run lint",
+    "format": "prettier . --write",
+    "check-format": "prettier --check .",
+    "lint": "tsc",
+    "check-exports": "attw --pack .",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci",
+    "vite:dev": "vite",
+    "vite:build": "tsc -b && vite build",
+    "vite:preview": "vite preview"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.2",
+    "@changesets/cli": "^2.27.11",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
+    "@radix-ui/react-collapsible": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.1.4",
+    "@types/node": "^22.10.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.469.0",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.1"
+  },
+  "exports": {
+    "./components/*": "./dist/components/*",
+    "./hooks/*": "./dist/hooks/*"
+  }
 }
