@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { ConditionalWrapper } from "@xweb3dev/react/components/ConditionalWrapper";
+import { ConditionalWrapper } from "@borispoehland/react/components/ConditionalWrapper";
 
 export function ConditionalWrapperDemo() {
   const isMobile = useIsMobile();
