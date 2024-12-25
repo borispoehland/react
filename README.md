@@ -4,7 +4,7 @@ Utility hooks and components for modern, RSC based React!
 
 ## ConditionalWrapper
 
-```
+``` JSX
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import {
   Collapsible,
